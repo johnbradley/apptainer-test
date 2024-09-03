@@ -5,6 +5,6 @@ From: condaforge/miniforge3:24.3.0-0
     PYBIOCLIP_VERSION=
 
 %post
-   pip install requests
+   pip install requests && echo {{ PYBIOCLIP_VERSION }}
 %runscript
    exec bash
