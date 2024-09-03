@@ -40,7 +40,7 @@ jobs:
           apptainer-version: 1.3.0
 
       - name: Build an apptainer image
-        run: apptainer build --build-arg PYBIOCLIP_VERSION=1.0.0 bioclip.sif apptainer.def
+        run: apptainer build --build-arg PYBIOCLIP_VERSION=${{ steps.meta.outputs.version }} bioclip.sif apptainer.def
 
       - name: Publish apptainer image
-        run: apptainer push bioclip.sif oras://ghcr.io/johnbradley/apptainer-test:1.0.0
+        run: apptainer push bioclip.sif oras://ghcr.io/johnbradley/apptainer-test:${{ steps.meta.outputs.version }}
