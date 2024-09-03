@@ -1,7 +1,8 @@
-name: Create and publish a Docker image
+name: Create and publish an Apptainer image
 
 on:
-  push
+  release:
+    types: [published]
 
 env:
   REGISTRY: ghcr.io
@@ -17,16 +18,29 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Log in to the Container registry
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}        
-      - uses: eWaterCycle/setup-apptainer@v2
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels) for Apptainer
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=semver,pattern={{major}}.{{minor}}.{{patch}}
+
+      - name: Setup apptainer executable
+        uses: eWaterCycle/setup-apptainer@v2
         with:
           apptainer-version: 1.3.0
-      - name: Run an apptainer container
+
+      - name: Build an apptainer image
         run: apptainer build --build-arg PYBIOCLIP_VERSION=1.0.0 bioclip.sif apptainer.def
-      - name: Run an apptainer container
+
+      - name: Publish apptainer image
         run: apptainer push bioclip.sif oras://ghcr.io/johnbradley/apptainer-test:1.0.0
