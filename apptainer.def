@@ -5,6 +5,6 @@ From: condaforge/miniforge3:24.3.0-0
     PYBIOCLIP_VERSION=
 
 %post
-   pip install "https://github.com/Imageomics/pybioclip/archive/refs/tags/{{ PYBIOCLIP_VERSION }}.tar.gz" && pip cache purge
+   pip install requests
 %runscript
    exec bash
