@@ -1,0 +1,24 @@
+name: Create and publish a Docker image
+
+on:
+  push
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: eWaterCycle/setup-apptainer@v2
+        with:
+          apptainer-version: 1.3.0
+      - name: Run an apptainer container
+        run: apptainer build bioclip.sif apptainer.def
