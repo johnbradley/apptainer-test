@@ -1,6 +1,10 @@
 Bootstrap: docker
 From: condaforge/miniforge3:24.3.0-0
+
+%arguments
+    PYBIOCLIP_VERSION=
+
 %post
-   pip install "https://github.com/Imageomics/pybioclip/archive/refs/tags/1.0.0.tar.gz" && pip cache purge
+   pip install "https://github.com/Imageomics/pybioclip/archive/refs/tags/{{ PYBIOCLIP_VERSION }}.tar.gz" && pip cache purge
 %runscript
    exec python

@@ -27,6 +27,6 @@ jobs:
         with:
           apptainer-version: 1.3.0
       - name: Run an apptainer container
-        run: apptainer build bioclip.sif apptainer.def
+        run: apptainer build bioclip.sif --build-arg PYBIOCLIPVERSION=1.0.0 apptainer.def
       - name: Run an apptainer container
         run: apptainer push bioclip.sif oras://ghcr.io/johnbradley/apptainer-test:1.0.0
