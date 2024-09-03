@@ -7,4 +7,4 @@ From: condaforge/miniforge3:24.3.0-0
 %post
    pip install "https://github.com/Imageomics/pybioclip/archive/refs/tags/{{ PYBIOCLIP_VERSION }}.tar.gz" && pip cache purge
 %runscript
-   exec python
+   exec bash
