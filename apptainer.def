@@ -1,10 +1,18 @@
 Bootstrap: docker
-From: condaforge/miniforge3:24.3.0-0
+From: ghcr.io/imageomics/pybioclip:{{ VERSION }}
 
 %arguments
-    PYBIOCLIP_VERSION=
+    VERSION=
+    REVISION=
 
-%post
-   pip install requests && echo {{ PYBIOCLIP_VERSION }}
 %runscript
    exec bash
+
+%labels
+    org.opencontainers.image.url https://github.com/Imageomics/pybioclip
+    org.opencontainers.image.source https://github.com/Imageomics/pybioclip
+    org.opencontainers.image.title pybioclip
+    org.opencontainers.image.revision {{ REVISION }},
+    org.opencontainers.image.version {{ VERSION }}
+    org.opencontainers.image.description "Python package that simplifies using the BioCLIP foundation model."
+    org.opencontainers.image.licenses MIT
