@@ -1,9 +1,9 @@
-name: Create and publish an Apptainer image
+
+name: Create and publish a Docker image
 
 on:
   release:
     types: [published]
-
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -26,21 +26,21 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata (tags, labels) for Apptainer
+      - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=semver,pattern={{major}}.{{minor}}.{{patch}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
 
-      - name: Setup apptainer executable
-        uses: eWaterCycle/setup-apptainer@v2
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
         with:
-          apptainer-version: 1.3.0
-
-      - name: Build an apptainer image
-        run: apptainer build --build-arg PYBIOCLIP_VERSION=${{ steps.meta.outputs.version }} apptainer.sif apptainer.def
-
-      - name: Publish apptainer image
-        run: apptainer push apptainer.sif oras://${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-sif:${{ steps.meta.outputs.version }}
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: "PYBIOCLIP_VERSION=${{ steps.meta.outputs.version }}"
