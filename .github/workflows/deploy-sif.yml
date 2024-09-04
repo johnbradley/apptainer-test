@@ -80,7 +80,7 @@ jobs:
           apptainer-version: 1.3.3
 
       - name: Build an apptainer image
-        run: apptainer build --build-arg VERSION=${{ steps.meta.outputs.version }} apptainer.sif apptainer.def
+        run: apptainer build --build-arg PYBIOCLIP_VERSION=${{ steps.meta.outputs.version }} apptainer.sif apptainer.def
 
       - name: Publish apptainer image
         run: apptainer push apptainer.sif oras://${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-sif:${{ steps.meta.outputs.version }}
