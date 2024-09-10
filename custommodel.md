@@ -45,11 +45,13 @@ pybioclip predict --cls fox,dog,bird --model ViT-B-16 --predefined laion2b_s34b_
 
 ### Using Custom Models with Python Code
 ```
+from bioclip import CustomLabelsClassifier
 
 classifier = CustomLabelsClassifier(
-    cls_ary = ['fox','dog','bird'],
+    cls_ary = ["duck","fish","bear"],
     model_str='ViT-B-16',
     pretrained_str='laion2b_s34b_b88k')
-print(classifier.predict("Ursus.jpeg"))
+
+print(classifier.predict("Ursus-arctos.jpeg"))
 ```
   
