@@ -6,8 +6,12 @@ Other OpenCLIP models can be used but only with predicting custom classes.
 
 
 ```
-pybioclip predict --cls fox,dog,bird --model --pretrained 
+pybioclip predict --cls fox,dog,bird --model 'hf-hub:laion/CLIP-ViT-B-16-laion2B-s34B-b88K'
 ```
+
+```
+ --pretrained
+````
 
 ```
 classifier = CustomLabelsClassifier(
