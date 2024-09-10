@@ -5,6 +5,14 @@ _NOTE: It is also possible to download the pybioclip docker container and conver
 
 ## Tutorial
 
+## Download example images
+Download two images from the [bioclip-demo](https://huggingface.co/spaces/imageomics/bioclip-demo).
+
+```console
+wget https://huggingface.co/spaces/imageomics/bioclip-demo/resolve/main/examples/Ursus-arctos.jpeg
+wget https://huggingface.co/spaces/imageomics/bioclip-demo/resolve/main/examples/Felis-catus.jpeg
+```
+
 ## Download a pybioclip container
 
 ```
