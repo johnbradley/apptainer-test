@@ -26,6 +26,8 @@ The above command will create a `pybioclip_1.0.0.sif` container image file.
 ```
 
 ### Create predictions using a GPU
+This step requires a cuda GPU.
+
 ```console
 apptainer exec -nv ./pybioclip_1.0.0.sif bioclip predict --device cuda Ursus-arctos.jpeg Felis-catus.jpeg
 ```
