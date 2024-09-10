@@ -32,6 +32,7 @@ apptainer exec -nv ./pybioclip_1.0.0.sif bioclip predict --device cuda Ursus-arc
 
 ### Create predictions using a GPU via a Slurm Job
 This step requires being on a [Slurm cluster](https://slurm.schedmd.com/documentation.html).
+
 Create a Slurm sbatch script named `bioclip.sh` with the following content:
 ```
 #!/bin/bash 
