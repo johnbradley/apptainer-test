@@ -1,7 +1,7 @@
 # Using Other OpenCLIP Models
 By default pybioclip uses the bioclip model at [hf-hub:imageomics/bioclip](https://huggingface.co/imageomics/bioclip).
 
-Other OpenCLIP models can be used but only with predicting custom classes.
+Other OpenCLIP models can be used but only when predicting from a list of custom classes.
 
 ## Tutorial
 
