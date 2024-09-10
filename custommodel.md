@@ -3,6 +3,7 @@ By default pybioclip uses the bioclip model at [hf-hub:imageomics/bioclip](https
 
 Other OpenCLIP models can be used but only when predicting from a list of custom classes.
 
+
 ## Tutorial
 
 ### Download an example image
@@ -24,43 +25,32 @@ ViT-B-16
 ViT-B-16-plus
 ...
 ```
+Next we will see what versions are available for the `ViT-B-16` model.
 
 ```
-bioclip list-models --model ViT-B-16
+bioclip list-models --model  ViT-B-16
 ```
 Output:
 ```
-openai
-laion400m_e31
-laion400m_e32
+...
 laion2b_s34b_b88k
-datacomp_xl_s13b_b90k
-datacomp_l_s1b_b8k
-commonpool_l_clip_s1b_b8k
-commonpool_l_laion_s1b_b8k
-commonpool_l_image_s1b_b8k
-commonpool_l_text_s1b_b8k
-commonpool_l_basic_s1b_b8k
-commonpool_l_s1b_b8k
-dfn2b
+...
 ```
 
-### List models
-
-
-```
-pybioclip predict --cls fox,dog,bird --model 'hf-hub:laion/CLIP-ViT-B-16-laion2B-s34B-b88K'
-```
+### Create a prediction 
 
 ```
- --pretrained
-````
-
+pybioclip predict --cls fox,dog,bird --model ViT-B-16 --predefined laion2b_s34b_b88k Ursus-arctos.jpeg
 ```
+
+
+### Using Custom Models with Python Code
+```
+
 classifier = CustomLabelsClassifier(
     cls_ary = ['fox','dog','bird'],
-    model_str=args.model,
-    pretrained_str=args.pretrained)
-classifier.predict("Ursus.jpeg");
+    model_str='ViT-B-16',
+    pretrained_str='laion2b_s34b_b88k')
+print(classifier.predict("Ursus.jpeg"))
 ```
   
