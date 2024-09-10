@@ -1,4 +1,4 @@
-# Apptainer/Singularity pybioclip Container
+# Apptainer pybioclip Container
 [Apptainer/Singularity](https://apptainer.org/docs/user/main/index.html) images for pybioclip are provided at [ghcr.io/Imageomics/pybioclip-sif registry](https://github.com/Imageomics/pybioclip/pkgs/container/pybioclip-sif).
 
 _NOTE: It is also possible to download the pybioclip docker container and convert that into a singularity container, but that process can take quite a while._
