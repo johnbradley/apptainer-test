@@ -22,14 +22,14 @@ The above command will create a `pybioclip_1.0.0.sif` container image file.
 
 ### Create predictions using a CPU
 ```console
-./pybioclip_1.0.0.sif bioclip predict Ursus-arctos.jpeg Felis-catus.jpeg
+./pybioclip_sif_1.0.0.sif bioclip predict Ursus-arctos.jpeg Felis-catus.jpeg
 ```
 
 ### Create predictions using a GPU
 This step requires a cuda GPU.
 
 ```console
-apptainer exec -nv ./pybioclip_1.0.0.sif bioclip predict --device cuda Ursus-arctos.jpeg Felis-catus.jpeg
+apptainer exec -nv ./pybioclip_sif_1.0.0.sif bioclip predict --device cuda Ursus-arctos.jpeg Felis-catus.jpeg
 ```
 
 ### Create predictions using a GPU via a Slurm Job
@@ -42,7 +42,7 @@ Create a Slurm sbatch script named `bioclip.sh` with the following content:
 #SBATCH --nodes=1 
 #SBATCH --time=00:10:00 
 #SBATCH --gpus-per-node=1 
-apptainer exec --nv ./pybioclip_1.0.0.sif bioclip predict --device cuda $*
+apptainer exec --nv ./pybioclip_sif_1.0.0.sif bioclip predict --device cuda $*
 ```
 Run the slurm job filling in your Slurm account:
 ```console
