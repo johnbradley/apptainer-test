@@ -25,7 +25,7 @@ ViT-B-16
 ViT-B-16-plus
 ...
 ```
-Next we will see what versions are available for the `ViT-B-16` model.
+Next we will see what pretrained models are available for the `ViT-B-16` model.
 
 ```
 bioclip list-models --model  ViT-B-16
