@@ -5,7 +5,7 @@ _NOTE: It is also possible to download the pybioclip docker container and conver
 
 ## Tutorial
 
-## Download example images
+### Download example images
 Download two images from the [bioclip-demo](https://huggingface.co/spaces/imageomics/bioclip-demo).
 
 ```console
@@ -13,19 +13,19 @@ wget https://huggingface.co/spaces/imageomics/bioclip-demo/resolve/main/examples
 wget https://huggingface.co/spaces/imageomics/bioclip-demo/resolve/main/examples/Felis-catus.jpeg
 ```
 
-## Download a pybioclip container
+### Download a pybioclip container
 
 ```
 apptainer pull oras://ghcr.io/imageomics/pybioclip-sif:1.0.0
 ```
 The above command will create a `pybioclip_1.0.0.sif` container image file.
 
-## Create predictions using a CPU
+### Create predictions using a CPU
 ```
 ./pybioclip_1.0.0.sif bioclip predict Ursus-arctos.jpeg Felis-catus.jpeg
 ```
 
-## Create predictions using a GPU
+### Create predictions using a GPU
 ```
 apptainer exec -nv ./pybioclip_1.0.0.sif bioclip predict --device cuda Ursus-arctos.jpeg Felis-catus.jpeg
 ```
