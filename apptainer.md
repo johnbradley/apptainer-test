@@ -38,7 +38,6 @@ This step requires being on a [Slurm cluster](https://slurm.schedmd.com/document
 Create a Slurm sbatch script named `bioclip.sh` with the following content:
 ```
 #!/bin/bash 
-#SBATCH --job-name SIFPyBioclip
 #SBATCH --nodes=1 
 #SBATCH --time=00:10:00 
 #SBATCH --gpus-per-node=1 
