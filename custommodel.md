@@ -19,10 +19,9 @@ bioclip list-models
 ```
 Output:
 ```
-coca_base
-coca_roberta-ViT-B-32
 ...
 ViT-B-16
+ViT-B-16-plus
 ...
 ```
 
