@@ -3,7 +3,6 @@ By default pybioclip uses the bioclip model at [hf-hub:imageomics/bioclip](https
 
 Other OpenCLIP models can be used but only when predicting from a list of custom classes.
 
-
 ## Tutorial
 
 ### Download an example image
