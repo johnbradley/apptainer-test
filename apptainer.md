@@ -22,12 +22,12 @@ The above command will create a `pybioclip_1.0.0.sif` container image file.
 
 ## Create predictions using a CPU
 ```
-./pybioclip_1.0.0.sif bioclip predict Ursus.jpeg
+./pybioclip_1.0.0.sif bioclip predict Ursus-arctos.jpeg Felis-catus.jpeg
 ```
 
 ## Create predictions using a GPU
 ```
-apptainer exec -nv ./pybioclip_1.0.0.sif bioclip predict --device cuda Ursus.jpeg
+apptainer exec -nv ./pybioclip_1.0.0.sif bioclip predict --device cuda Ursus-arctos.jpeg Felis-catus.jpeg
 ```
 
 
@@ -43,5 +43,5 @@ apptainer exec --nv ./pybioclip_1.0.0.sif bioclip predict --device cuda $*
 ```
 Run the slurm job:
 ```
-sbatch --account <SLURMACCT> bioclip.sh Ursus-arctos.jpeg Other.jpeg
+sbatch --account <SLURMACCT> bioclip.sh Ursus-arctos.jpeg Felis-catus.jpeg
 ```
