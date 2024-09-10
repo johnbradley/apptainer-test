@@ -3,7 +3,7 @@
 
 _NOTE: It is also possible to download the pybioclip docker container and convert that into a singularity container, but that process can take quite a while._
 
-## Usage
+## Tutorial
 
 ## Download a pybioclip container
 
