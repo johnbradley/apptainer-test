@@ -43,7 +43,7 @@ laion2b_s34b_b88k
 ### Create a prediction 
 
 ```
-bioclip predict --cls fox,dog,bird --model ViT-B-16 --pretrained laion2b_s34b_b88k Ursus-arctos.jpeg
+bioclip predict --cls duck,fish,bear --model ViT-B-16 --pretrained laion2b_s34b_b88k Ursus-arctos.jpeg
 ```
 
 
