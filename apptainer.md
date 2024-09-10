@@ -44,7 +44,7 @@ Create a Slurm sbatch script named `bioclip.sh` with the following content:
 #SBATCH --gpus-per-node=1 
 apptainer exec --nv ./pybioclip_1.0.0.sif bioclip predict --device cuda $*
 ```
-Run the slurm job:
+Run the slurm job filling in your Slurm account:
 ```console
 sbatch --account <SLURMACCT> bioclip.sh Ursus-arctos.jpeg Felis-catus.jpeg
 ```
