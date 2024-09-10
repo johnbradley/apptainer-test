@@ -15,18 +15,18 @@ wget https://huggingface.co/spaces/imageomics/bioclip-demo/resolve/main/examples
 
 ### Download a pybioclip container
 
-```
+```console
 apptainer pull oras://ghcr.io/imageomics/pybioclip-sif:1.0.0
 ```
 The above command will create a `pybioclip_1.0.0.sif` container image file.
 
 ### Create predictions using a CPU
-```
+```console
 ./pybioclip_1.0.0.sif bioclip predict Ursus-arctos.jpeg Felis-catus.jpeg
 ```
 
 ### Create predictions using a GPU
-```
+```console
 apptainer exec -nv ./pybioclip_1.0.0.sif bioclip predict --device cuda Ursus-arctos.jpeg Felis-catus.jpeg
 ```
 
@@ -42,6 +42,6 @@ Create a Slurm sbatch script named `bioclip.sh` with the following content:
 apptainer exec --nv ./pybioclip_1.0.0.sif bioclip predict --device cuda $*
 ```
 Run the slurm job:
-```
+```console
 sbatch --account <SLURMACCT> bioclip.sh Ursus-arctos.jpeg Felis-catus.jpeg
 ```
