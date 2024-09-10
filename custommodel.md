@@ -3,9 +3,9 @@ By default pybioclip uses the bioclip model at [hf-hub:imageomics/bioclip](https
 
 Other OpenCLIP models can be used but only when predicting from a list of custom classes.
 
-The `bioclip` command line tool provides `--model` and `--predefined` arguments to specify an alternate model to use.
+The `bioclip` command line tool provides `--model` and `--pretrained` arguments to specify an alternate model to use.
 
-See [open_clip loading documentation](https://github.com/mlfoundations/open_clip?tab=readme-ov-file#loading-models) for more details about values that can be used for the `--model` and `--predefined` arguments.
+See [open_clip model loading documentation](https://github.com/mlfoundations/open_clip?tab=readme-ov-file#loading-models) for more details about values that can be used for the `--model` and `--pretrained` arguments.
 
 ## Tutorial
 
@@ -43,7 +43,7 @@ laion2b_s34b_b88k
 ### Create a prediction 
 
 ```
-pybioclip predict --cls fox,dog,bird --model ViT-B-16 --predefined laion2b_s34b_b88k Ursus-arctos.jpeg
+pybioclip predict --cls fox,dog,bird --model ViT-B-16 --pretrained laion2b_s34b_b88k Ursus-arctos.jpeg
 ```
 
 
