@@ -30,8 +30,7 @@ The above command will create a `pybioclip_1.0.0.sif` container image file.
 apptainer exec -nv ./pybioclip_1.0.0.sif bioclip predict --device cuda Ursus-arctos.jpeg Felis-catus.jpeg
 ```
 
-
-## Create predictions using a GPU via a Slurm Job
+### Create predictions using a GPU via a Slurm Job
 This step requires being on a [Slurm cluster](https://slurm.schedmd.com/documentation.html).
 Create a Slurm sbatch script named `bioclip.sh` with the following content:
 ```
