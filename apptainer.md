@@ -1,7 +1,5 @@
 # Using the Apptainer/Singularity pybioclip Container
-Often HPC clusters provide containerization support via [Apptainer/Singularity](https://apptainer.org/docs/user/main/index.html).
-
-To ease of pybioclip this way apptainer images are provided at [ghcr.io/Imageomics/pybioclip-sif registry](https://github.com/Imageomics/pybioclip/pkgs/container/pybioclip-sif).
+[Apptainer/Singularity](https://apptainer.org/docs/user/main/index.html) images for pybioclip are provided at [ghcr.io/Imageomics/pybioclip-sif registry](https://github.com/Imageomics/pybioclip/pkgs/container/pybioclip-sif).
 
 ## Usage
 
