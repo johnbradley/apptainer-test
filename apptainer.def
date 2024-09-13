@@ -6,4 +6,3 @@ From: ghcr.io/imageomics/pybioclip:{{ PYBIOCLIP_VERSION }}
 
 %runscript
    exec bash
-
